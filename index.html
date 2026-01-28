@@ -17,10 +17,11 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             padding: 20px;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         .floating-words {
@@ -469,8 +470,14 @@
 
         /* Mobile responsive styles */
         @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding: 20px 10px;
+            }
+
             .container {
                 padding: 20px;
+                margin: 20px 0 40px 0;
             }
 
             h1 {
