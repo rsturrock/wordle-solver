@@ -466,6 +466,116 @@
             height: 30px;
             border-radius: 4px;
         }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 0.8em;
+            }
+
+            .letter-cell {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5em;
+            }
+
+            .guess-row {
+                gap: 5px;
+            }
+
+            .guess-grid {
+                gap: 5px;
+            }
+
+            input[type="text"] {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 0.9em;
+                padding: 10px 16px;
+            }
+
+            .word-chip {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+
+            .suggestions h3 {
+                font-size: 1em;
+            }
+
+            .stat-value {
+                font-size: 1.2em;
+            }
+
+            .info-box {
+                font-size: 0.85em;
+            }
+
+            .legend {
+                gap: 10px;
+            }
+
+            .legend-item {
+                font-size: 0.8em;
+            }
+
+            .legend-box {
+                width: 25px;
+                height: 25px;
+            }
+
+            .suggestions-placeholder {
+                height: 500px;
+            }
+
+            .floating-word {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .letter-cell {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3em;
+            }
+
+            .guess-row {
+                gap: 4px;
+            }
+
+            .word-chip {
+                font-size: 0.75em;
+                padding: 5px 10px;
+            }
+
+            .suggestions-placeholder {
+                height: 550px;
+            }
+
+            .floating-word {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 <body>
