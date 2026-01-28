@@ -13,12 +13,210 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #ffffff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-words {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-word {
+            position: absolute;
+            font-size: 3em;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.08);
+            transform: rotate(-45deg);
+            animation: float-diagonal 25s linear infinite;
+            white-space: nowrap;
+            letter-spacing: 0.5em;
+            /* Start off-screen by default */
+            left: -50%;
+            top: 150%;
+        }
+
+        .floating-word:nth-child(1) { animation-delay: 0s; animation-name: float-path-1; }
+        .floating-word:nth-child(2) { animation-delay: 2s; animation-name: float-path-2; }
+        .floating-word:nth-child(3) { animation-delay: 4s; animation-name: float-path-3; }
+        .floating-word:nth-child(4) { animation-delay: 6s; animation-name: float-path-4; }
+        .floating-word:nth-child(5) { animation-delay: 8s; animation-name: float-path-5; }
+        .floating-word:nth-child(6) { animation-delay: 10s; animation-name: float-path-6; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(7) { animation-delay: 12s; animation-name: float-path-7; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(8) { animation-delay: 14s; animation-name: float-path-8; }
+        .floating-word:nth-child(9) { animation-delay: 16s; animation-name: float-path-9; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(10) { animation-delay: 18s; animation-name: float-path-10; }
+        .floating-word:nth-child(11) { animation-delay: 20s; animation-name: float-path-11; }
+        .floating-word:nth-child(12) { animation-delay: 22s; animation-name: float-path-12; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(13) { animation-delay: 24s; animation-name: float-path-13; }
+        .floating-word:nth-child(14) { animation-delay: 26s; animation-name: float-path-14; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(15) { animation-delay: 28s; animation-name: float-path-15; }
+        .floating-word:nth-child(16) { animation-delay: 30s; animation-name: float-path-16; }
+        .floating-word:nth-child(17) { animation-delay: 32s; animation-name: float-path-17; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(18) { animation-delay: 34s; animation-name: float-path-18; }
+        .floating-word:nth-child(19) { animation-delay: 36s; animation-name: float-path-19; }
+        .floating-word:nth-child(20) { animation-delay: 38s; animation-name: float-path-20; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(21) { animation-delay: 40s; animation-name: float-path-1; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(22) { animation-delay: 42s; animation-name: float-path-2; }
+        .floating-word:nth-child(23) { animation-delay: 44s; animation-name: float-path-3; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(24) { animation-delay: 46s; animation-name: float-path-4; }
+        .floating-word:nth-child(25) { animation-delay: 48s; animation-name: float-path-5; }
+        .floating-word:nth-child(26) { animation-delay: 50s; animation-name: float-path-6; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(27) { animation-delay: 52s; animation-name: float-path-7; }
+        .floating-word:nth-child(28) { animation-delay: 54s; animation-name: float-path-8; color: rgba(255, 255, 255, 0.4); text-shadow: 0 0 2px rgba(0,0,0,0.1); }
+        .floating-word:nth-child(29) { animation-delay: 56s; animation-name: float-path-9; }
+        .floating-word:nth-child(30) { animation-delay: 58s; animation-name: float-path-10; }
+
+        @keyframes float-path-1 {
+            0% { left: -30%; top: 100%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 100%; top: -10%; opacity: 0; }
+        }
+
+        @keyframes float-path-2 {
+            0% { left: 10%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 120%; top: 10%; opacity: 0; }
+        }
+
+        @keyframes float-path-3 {
+            0% { left: -30%; top: 60%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 80%; top: -30%; opacity: 0; }
+        }
+
+        @keyframes float-path-4 {
+            0% { left: 30%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 140%; top: 30%; opacity: 0; }
+        }
+
+        @keyframes float-path-5 {
+            0% { left: -30%; top: 40%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 70%; top: -40%; opacity: 0; }
+        }
+
+        @keyframes float-path-6 {
+            0% { left: 50%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 160%; top: 50%; opacity: 0; }
+        }
+
+        @keyframes float-path-7 {
+            0% { left: -30%; top: 20%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 60%; top: -50%; opacity: 0; }
+        }
+
+        @keyframes float-path-8 {
+            0% { left: 70%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 180%; top: 70%; opacity: 0; }
+        }
+
+        @keyframes float-path-9 {
+            0% { left: -30%; top: 80%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 90%; top: 0%; opacity: 0; }
+        }
+
+        @keyframes float-path-10 {
+            0% { left: 20%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 130%; top: 20%; opacity: 0; }
+        }
+
+        @keyframes float-path-11 {
+            0% { left: -30%; top: 110%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 110%; top: 5%; opacity: 0; }
+        }
+
+        @keyframes float-path-12 {
+            0% { left: 40%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 150%; top: 40%; opacity: 0; }
+        }
+
+        @keyframes float-path-13 {
+            0% { left: -30%; top: 30%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 65%; top: -45%; opacity: 0; }
+        }
+
+        @keyframes float-path-14 {
+            0% { left: 60%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 170%; top: 60%; opacity: 0; }
+        }
+
+        @keyframes float-path-15 {
+            0% { left: -30%; top: 50%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 75%; top: -35%; opacity: 0; }
+        }
+
+        @keyframes float-path-16 {
+            0% { left: 15%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 125%; top: 15%; opacity: 0; }
+        }
+
+        @keyframes float-path-17 {
+            0% { left: -30%; top: 70%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 85%; top: -20%; opacity: 0; }
+        }
+
+        @keyframes float-path-18 {
+            0% { left: 45%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 155%; top: 45%; opacity: 0; }
+        }
+
+        @keyframes float-path-19 {
+            0% { left: -30%; top: 90%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 95%; top: -5%; opacity: 0; }
+        }
+
+        @keyframes float-path-20 {
+            0% { left: 55%; top: 120%; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { left: 165%; top: 55%; opacity: 0; }
         }
 
         .container {
@@ -28,6 +226,8 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 600px;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -260,6 +460,29 @@
     </style>
 </head>
 <body>
+    <div class="floating-words">
+        <div class="floating-word">WORDLE</div>
+        <div class="floating-word">GUESS</div>
+        <div class="floating-word">SOLVE</div>
+        <div class="floating-word">WORDS</div>
+        <div class="floating-word">BRAIN</div>
+        <div class="floating-word">THINK</div>
+        <div class="floating-word">PUZZLE</div>
+        <div class="floating-word">PLAYS</div>
+        <div class="floating-word">SMART</div>
+        <div class="floating-word">GAMES</div>
+        <div class="floating-word">LOGIC</div>
+        <div class="floating-word">CLUES</div>
+        <div class="floating-word">TILES</div>
+        <div class="floating-word">MATCH</div>
+        <div class="floating-word">HINTS</div>
+        <div class="floating-word">DAILY</div>
+        <div class="floating-word">SCORE</div>
+        <div class="floating-word">SHARE</div>
+        <div class="floating-word">TRACK</div>
+        <div class="floating-word">QUEST</div>
+    </div>
+    
     <div class="container">
         <h1>🎯 Wordle Solver</h1>
         <p class="subtitle" id="subtitle">Loading complete word database from GitHub...</p>
