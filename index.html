@@ -374,11 +374,20 @@
             background: #d0d0d0;
         }
 
+        .suggestions-placeholder {
+            height: 450px;
+            position: relative;
+        }
+
         .suggestions {
             background: #f8f9fa;
             border-radius: 8px;
             padding: 20px;
-            margin-top: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            min-height: 200px;
         }
 
         .suggestions h3 {
@@ -520,23 +529,25 @@
                 </div>
             </div>
 
-            <div class="suggestions" id="suggestions" style="display: none;">
-                <h3>💡 Suggested Words (<span id="wordCount">0</span> possibilities)</h3>
-                <div class="word-list" id="wordList"></div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-value" id="totalWords">0</div>
-                        <div class="stat-label">Remaining</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="guessCount">0</div>
-                        <div class="stat-label">Guesses</div>
-                    </div>
-                </div>
-            </div>
-
             <div class="info-box">
                 <strong>How to use:</strong> Enter your guess, click "Add Guess", then click each letter tile to mark it as correct (green), present (yellow), or absent (gray). The solver will suggest possible words based on your constraints.
+            </div>
+
+            <div class="suggestions-placeholder">
+                <div class="suggestions" id="suggestions" style="display: none;">
+                    <h3>💡 Suggested Words (<span id="wordCount">0</span> possibilities)</h3>
+                    <div class="word-list" id="wordList"></div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalWords">0</div>
+                            <div class="stat-label">Remaining</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="guessCount">0</div>
+                            <div class="stat-label">Guesses</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
